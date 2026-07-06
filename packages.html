@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages - Stackly Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link active">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="packages.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="packages.html" class="btn btn-primary">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <video class="page-hero-video" autoplay muted loop playsinline poster="">
+      <source src="packages.mp4" type="video/mp4">
+    </video>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <span class="hero-badge">Tour Packages</span>
+      <h1 class="page-hero-title">Choose Your <span class="accent">Perfect Trip</span></h1>
+      <p class="page-hero-subtitle">Handpicked packages designed for every type of traveler. Unbeatable value, unforgettable experiences.</p>
+    </div>
+  </section>
+
+  <!-- Toggle -->
+  <section class="packages section">
+    <div class="container">
+      <div class="pkg-toggle reveal">
+        <div class="toggle-group">
+          <button class="toggle-btn active" data-plan="monthly">Per Person</button>
+          <button class="toggle-btn" data-plan="yearly">Per Group <span class="save-badge">Save 20%</span></button>
+        </div>
+      </div>
+
+      <div class="packages-grid">
+        <div class="package-card reveal" data-tier="budget">
+          <div class="pkg-badge">Best Value</div>
+          <div class="pkg-icon"><i class="fas fa-backpack"></i></div>
+          <h3 class="pkg-name">Explorer</h3>
+          <div class="pkg-price">
+            <span class="currency">$</span><span class="price-amount" data-person="499" data-group="399">499</span><span class="period">/person</span>
+          </div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+            <li><i class="fas fa-check"></i> Budget Accommodation</li>
+            <li><i class="fas fa-check"></i> Guided City Tour</li>
+            <li><i class="fas fa-check"></i> Breakfast Included</li>
+            <li><i class="fas fa-check"></i> Airport Transfers</li>
+            <li class="na"><i class="fas fa-times"></i> Luxury Resort</li>
+            <li class="na"><i class="fas fa-times"></i> Fine Dining</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline pkg-btn" style="--btn-color: var(--primary); color: var(--primary); border-color: var(--primary);">Get This Package</a>
+        </div>
+        <div class="package-card reveal featured" data-tier="standard">
+          <div class="pkg-badge">Most Popular</div>
+          <div class="pkg-icon"><i class="fas fa-suitcase-rolling"></i></div>
+          <h3 class="pkg-name">Adventurer</h3>
+          <div class="pkg-price">
+            <span class="currency">$</span><span class="price-amount" data-person="899" data-group="719">899</span><span class="period">/person</span>
+          </div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> 5 Days / 4 Nights</li>
+            <li><i class="fas fa-check"></i> 3★ Accommodation</li>
+            <li><i class="fas fa-check"></i> All Guided Tours</li>
+            <li><i class="fas fa-check"></i> Full Board Meals</li>
+            <li><i class="fas fa-check"></i> Airport Transfers</li>
+            <li><i class="fas fa-check"></i> Adventure Activities</li>
+            <li class="na"><i class="fas fa-times"></i> Premium Services</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary pkg-btn">Get This Package</a>
+        </div>
+        <div class="package-card reveal" data-tier="premium">
+          <div class="pkg-badge">Premium</div>
+          <div class="pkg-icon"><i class="fas fa-gem"></i></div>
+          <h3 class="pkg-name">Voyager</h3>
+          <div class="pkg-price">
+            <span class="currency">$</span><span class="price-amount" data-person="1899" data-group="1519">1,899</span><span class="period">/person</span>
+          </div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> 7 Days / 6 Nights</li>
+            <li><i class="fas fa-check"></i> 5★ Luxury Resort</li>
+            <li><i class="fas fa-check"></i> Private Guide</li>
+            <li><i class="fas fa-check"></i> Gourmet Dining</li>
+            <li><i class="fas fa-check"></i> Private Transfers</li>
+            <li><i class="fas fa-check"></i> All Activities</li>
+            <li><i class="fas fa-check"></i> Spa & Wellness</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline pkg-btn" style="--btn-color: var(--primary); color: var(--primary); border-color: var(--primary);">Get This Package</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Book With Us -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why Book With Us</span>
+        <h2 class="section-title">Travel with <span class="accent">Confidence</span></h2>
+        <p class="section-desc">We go beyond bookings to create seamless, memorable travel experiences tailored just for you.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-user-graduate"></i></div>
+          <h3>Expert Local Guides</h3>
+          <p>Our vetted guides share insider knowledge, hidden gems, and authentic cultural stories that bring every destination to life.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-tags"></i></div>
+          <h3>Best Price Guarantee</h3>
+          <p>We negotiate exclusive rates with hotels, airlines, and activity providers so you get premium experiences at the best value.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-headset"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Our dedicated support team is available around the clock to assist with any questions, changes, or emergencies during your trip.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Easy Booking</h3>
+          <p>Our streamlined booking process lets you plan, customize, and confirm your entire itinerary in minutes, not hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-On Upgrades -->
+  <section class="section" id="upgrades" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Enhance Your Trip</span>
+        <h2 class="section-title">Add-On <span class="accent">Upgrades</span></h2>
+        <p class="section-desc">Customize your experience with these premium add-ons available for any package.</p>
+      </div>
+      <div class="packages-grid packages-grid--4">
+        <div class="package-card reveal" style="padding: 28px 20px;">
+          <div class="pkg-icon" style="width: 60px; height: 60px; font-size: 1.4rem;"><i class="fas fa-plane"></i></div>
+          <h3 class="pkg-name" style="font-size: 1.1rem;">Flight Upgrade</h3>
+          <div class="pkg-price" style="font-size: 1.6rem;"><span class="currency">$</span>299</div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> Premium Economy</li>
+            <li><i class="fas fa-check"></i> Extra Legroom</li>
+            <li><i class="fas fa-check"></i> Priority Boarding</li>
+            <li><i class="fas fa-check"></i> Lounge Access</li>
+          </ul>
+        </div>
+        <div class="package-card reveal" style="padding: 28px 20px;">
+          <div class="pkg-icon" style="width: 60px; height: 60px; font-size: 1.4rem;"><i class="fas fa-hotel"></i></div>
+          <h3 class="pkg-name" style="font-size: 1.1rem;">Room Upgrade</h3>
+          <div class="pkg-price" style="font-size: 1.6rem;"><span class="currency">$</span>199</div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> Suite Room</li>
+            <li><i class="fas fa-check"></i> Ocean/City View</li>
+            <li><i class="fas fa-check"></i> Balcony Access</li>
+            <li><i class="fas fa-check"></i> Complimentary Mini-Bar</li>
+          </ul>
+        </div>
+        <div class="package-card reveal" style="padding: 28px 20px;">
+          <div class="pkg-icon" style="width: 60px; height: 60px; font-size: 1.4rem;"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="pkg-name" style="font-size: 1.1rem;">Travel Insurance</h3>
+          <div class="pkg-price" style="font-size: 1.6rem;"><span class="currency">$</span>89</div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> Medical Coverage</li>
+            <li><i class="fas fa-check"></i> Trip Cancellation</li>
+            <li><i class="fas fa-check"></i> Lost Baggage</li>
+            <li><i class="fas fa-check"></i> 24/7 Assistance</li>
+          </ul>
+        </div>
+        <div class="package-card reveal" style="padding: 28px 20px;">
+          <div class="pkg-icon" style="width: 60px; height: 60px; font-size: 1.4rem;"><i class="fas fa-car"></i></div>
+          <h3 class="pkg-name" style="font-size: 1.1rem;">Private Transfers</h3>
+          <div class="pkg-price" style="font-size: 1.6rem;"><span class="currency">$</span>149</div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> Airport Pickup/Drop</li>
+            <li><i class="fas fa-check"></i> Luxury Vehicle</li>
+            <li><i class="fas fa-check"></i> Professional Driver</li>
+            <li><i class="fas fa-check"></i> Flexible Schedule</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Options -->
+  <section class="section" id="payment">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Secure Checkout</span>
+        <h2 class="section-title">Payment <span class="accent">Options</span></h2>
+        <p class="section-desc">We accept multiple secure payment methods for your convenience.</p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 28px; flex-wrap: wrap; padding: 20px 0;">
+        <div class="payment-item reveal">
+          <i class="fab fa-cc-visa" style="color: #1a1f71;"></i>
+          <p>Visa</p>
+        </div>
+        <div class="payment-item reveal">
+          <i class="fab fa-cc-mastercard" style="color: #eb001b;"></i>
+          <p>Mastercard</p>
+        </div>
+        <div class="payment-item reveal">
+          <i class="fab fa-cc-amex" style="color: #2e63b1;"></i>
+          <p>Amex</p>
+        </div>
+        <div class="payment-item reveal">
+          <i class="fab fa-cc-paypal" style="color: #003087;"></i>
+          <p>PayPal</p>
+        </div>
+        <div class="payment-item reveal">
+          <i class="fas fa-university" style="color: var(--secondary);"></i>
+          <p>Bank Transfer</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 24px; padding: 16px; background: rgba(34,197,94,0.08); border-radius: var(--radius-sm); max-width: 500px; margin-left: auto; margin-right: auto;">
+        <p style="font-size: 0.9rem; color: #16a34a;"><i class="fas fa-lock"></i> All transactions are encrypted and secure. Your payment information is protected.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-box reveal">
+        <h2>Subscribe to Our <span class="accent">Newsletter</span></h2>
+        <p>Get exclusive travel deals, tips, and inspiration delivered to your inbox weekly.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email address" required oninput="this.value = this.value.replace(/[^a-zA-Z0-9@.]/g, '')">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+          </a>
+          <p>Exploring the world, one destination at a time. Your journey begins with us.</p>
+          <div class="footer-social">
+            <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="404.html" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="destinations.html">Europe</a></li>
+            <li><a href="destinations.html">Asia</a></li>
+            <li><a href="destinations.html">Africa</a></li>
+            <li><a href="destinations.html">Australia</a></li>
+            <li><a href="destinations.html">Americas</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html#faq">FAQ</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms & Conditions</a></li>
+            <li><a href="404.html">Cancellation Policy</a></li>
+            <li><a href="404.html">Travel Insurance</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Details</h4>
+          <ul>
+            <li><i class="fas fa-map-pin"></i> 123 Travel Street, NY</li>
+            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+            <li><i class="fas fa-envelope"></i> info@stackly.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri 9AM-6PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly Travel Agency. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for explorers</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

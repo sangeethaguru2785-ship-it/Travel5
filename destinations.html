@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations - Stackly Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="packages.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="packages.html" class="btn btn-primary">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <video class="page-hero-video" autoplay muted loop playsinline poster="assets/images/bali.webp">
+      <source src="destination.mp4" type="video/mp4">
+    </video>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <span class="hero-badge">Destinations</span>
+      <h1 class="page-hero-title">Explore <span class="accent">the World</span></h1>
+      <p class="page-hero-subtitle">Handpicked destinations across the globe, each offering unique experiences and unforgettable memories.</p>
+    </div>
+  </section>
+
+  <!-- Search & Filter -->
+  <section class="section">
+    <div class="container">
+      <div class="dest-search reveal">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" id="destSearch" placeholder="Search destinations..." class="search-input">
+        </div>
+        <div class="search-filters">
+          <select id="regionFilter" class="filter-select">
+            <option value="all">All Regions</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="africa">Africa</option>
+            <option value="oceania">Oceania</option>
+            <option value="americas">Americas</option>
+          </select>
+          <select id="priceFilter" class="filter-select">
+            <option value="all">Any Budget</option>
+            <option value="budget">Under $1,000</option>
+            <option value="mid">$1,000 - $1,500</option>
+            <option value="premium">Above $1,500</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="dest-grid" id="destGrid">
+        <div class="dest-card reveal" data-region="asia" data-price="899">
+          <div class="dest-img">
+            <img src="assets/images/bali.webp" alt="Bali">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.9</div>
+            <div class="dest-price">From $899</div>
+          </div>
+          <div class="dest-info">
+            <h3>Bali, Indonesia</h3>
+            <p><i class="fas fa-map-pin"></i> 6 Days · 5 Nights</p>
+            <div class="dest-tags">
+              <span>Beach</span><span>Culture</span><span>Wellness</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="europe" data-price="1299">
+          <div class="dest-img">
+            <img src="assets/images/paris.webp" alt="Paris">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.8</div>
+            <div class="dest-price">From $1,299</div>
+          </div>
+          <div class="dest-info">
+            <h3>Paris, France</h3>
+            <p><i class="fas fa-map-pin"></i> 5 Days · 4 Nights</p>
+            <div class="dest-tags">
+              <span>Romance</span><span>Food</span><span>History</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="asia" data-price="1599">
+          <div class="dest-img">
+            <img src="assets/images/maldives.webp" alt="Maldives">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.9</div>
+            <div class="dest-price">From $1,599</div>
+          </div>
+          <div class="dest-info">
+            <h3>Maldives</h3>
+            <p><i class="fas fa-map-pin"></i> 7 Days · 6 Nights</p>
+            <div class="dest-tags">
+              <span>Luxury</span><span>Diving</span><span>Relaxation</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="asia" data-price="1499">
+          <div class="dest-img">
+            <img src="assets/images/tokyo.webp" alt="Tokyo">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.7</div>
+            <div class="dest-price">From $1,499</div>
+          </div>
+          <div class="dest-info">
+            <h3>Tokyo, Japan</h3>
+            <p><i class="fas fa-map-pin"></i> 7 Days · 6 Nights</p>
+            <div class="dest-tags">
+              <span>Technology</span><span>Traditions</span><span>Food</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="europe" data-price="1199">
+          <div class="dest-img">
+            <img src="assets/images/santorini.webp" alt="Santorini">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.8</div>
+            <div class="dest-price">From $1,199</div>
+          </div>
+          <div class="dest-info">
+            <h3>Santorini, Greece</h3>
+            <p><i class="fas fa-map-pin"></i> 6 Days · 5 Nights</p>
+            <div class="dest-tags">
+              <span>Sunset</span><span>Romance</span><span>Island</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="oceania" data-price="1699">
+          <div class="dest-img">
+            <img src="assets/images/sydney.webp" alt="Sydney">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.7</div>
+            <div class="dest-price">From $1,699</div>
+          </div>
+          <div class="dest-info">
+            <h3>Sydney, Australia</h3>
+            <p><i class="fas fa-map-pin"></i> 8 Days · 7 Nights</p>
+            <div class="dest-tags">
+              <span>Adventure</span><span>Nature</span><span>Urban</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="europe" data-price="999">
+          <div class="dest-img">
+            <img src="assets/images/amalficoast.webp" alt="Amalfi">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.8</div>
+            <div class="dest-price">From $999</div>
+          </div>
+          <div class="dest-info">
+            <h3>Amalfi Coast, Italy</h3>
+            <p><i class="fas fa-map-pin"></i> 5 Days · 4 Nights</p>
+            <div class="dest-tags">
+              <span>Coastal</span><span>Cuisine</span><span>History</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="africa" data-price="1399">
+          <div class="dest-img">
+            <img src="assets/images/serengeti.webp" alt="Serengeti">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.9</div>
+            <div class="dest-price">From $1,399</div>
+          </div>
+          <div class="dest-info">
+            <h3>Serengeti, Tanzania</h3>
+            <p><i class="fas fa-map-pin"></i> 7 Days · 6 Nights</p>
+            <div class="dest-tags">
+              <span>Safari</span><span>Wildlife</span><span>Adventure</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="americas" data-price="1099">
+          <div class="dest-img">
+            <img src="assets/images/machupicchu.webp" alt="Machu Picchu">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.7</div>
+            <div class="dest-price">From $1,099</div>
+          </div>
+          <div class="dest-info">
+            <h3>Machu Picchu, Peru</h3>
+            <p><i class="fas fa-map-pin"></i> 6 Days · 5 Nights</p>
+            <div class="dest-tags">
+              <span>History</span><span>Hiking</span><span>Culture</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="asia" data-price="1299">
+          <div class="dest-img">
+            <img src="assets/images/dubai.webp" alt="Dubai">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.8</div>
+            <div class="dest-price">From $1,299</div>
+          </div>
+          <div class="dest-info">
+            <h3>Dubai, UAE</h3>
+            <p><i class="fas fa-map-pin"></i> 5 Days · 4 Nights</p>
+            <div class="dest-tags">
+              <span>Luxury</span><span>Modern</span><span>Shopping</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="oceania" data-price="1899">
+          <div class="dest-img">
+            <img src="assets/images/queenstown.webp" alt="Queenstown">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.9</div>
+            <div class="dest-price">From $1,899</div>
+          </div>
+          <div class="dest-info">
+            <h3>Queenstown, New Zealand</h3>
+            <p><i class="fas fa-map-pin"></i> 8 Days · 7 Nights</p>
+            <div class="dest-tags">
+              <span>Adventure</span><span>Nature</span><span>Thrills</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="africa" data-price="899">
+          <div class="dest-img">
+            <img src="assets/images/marrakech.webp" alt="Marrakech">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.7</div>
+            <div class="dest-price">From $899</div>
+          </div>
+          <div class="dest-info">
+            <h3>Marrakech, Morocco</h3>
+            <p><i class="fas fa-map-pin"></i> 5 Days · 4 Nights</p>
+            <div class="dest-tags">
+              <span>Culture</span><span>Markets</span><span>Food</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="europe" data-price="1499">
+          <div class="dest-img">
+            <img src="assets/images/reykjavik.webp" alt="Reykjavik">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.8</div>
+            <div class="dest-price">From $1,499</div>
+          </div>
+          <div class="dest-info">
+            <h3>Reykjavik, Iceland</h3>
+            <p><i class="fas fa-map-pin"></i> 6 Days · 5 Nights</p>
+            <div class="dest-tags">
+              <span>Aurora</span><span>Geothermal</span><span>Adventure</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="americas" data-price="1199">
+          <div class="dest-img">
+            <img src="assets/images/banff.webp" alt="Banff">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.9</div>
+            <div class="dest-price">From $1,199</div>
+          </div>
+          <div class="dest-info">
+            <h3>Banff, Canada</h3>
+            <p><i class="fas fa-map-pin"></i> 7 Days · 6 Nights</p>
+            <div class="dest-tags">
+              <span>Mountains</span><span>Lakes</span><span>Wildlife</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal" data-region="asia" data-price="799">
+          <div class="dest-img">
+            <img src="assets/images/seoul.webp" alt="Seoul">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.6</div>
+            <div class="dest-price">From $799</div>
+          </div>
+          <div class="dest-info">
+            <h3>Seoul, South Korea</h3>
+            <p><i class="fas fa-map-pin"></i> 5 Days · 4 Nights</p>
+            <div class="dest-tags">
+              <span>K-Culture</span><span>Food</span><span>Tech</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-box reveal">
+        <h2>Subscribe to Our <span class="accent">Newsletter</span></h2>
+        <p>Get exclusive travel deals, tips, and inspiration delivered to your inbox weekly.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email address" required oninput="this.value = this.value.replace(/[^a-zA-Z0-9@.]/g, '')">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+          </a>
+          <p>Exploring the world, one destination at a time. Your journey begins with us.</p>
+          <div class="footer-social">
+            <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="404.html" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="destinations.html">Europe</a></li>
+            <li><a href="destinations.html">Asia</a></li>
+            <li><a href="destinations.html">Africa</a></li>
+            <li><a href="destinations.html">Australia</a></li>
+            <li><a href="destinations.html">Americas</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html#faq">FAQ</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms & Conditions</a></li>
+            <li><a href="404.html">Cancellation Policy</a></li>
+            <li><a href="404.html">Travel Insurance</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Details</h4>
+          <ul>
+            <li><i class="fas fa-map-pin"></i> 123 Travel Street, NY</li>
+            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+            <li><i class="fas fa-envelope"></i> info@stackly.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri 9AM-6PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly Travel Agency. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for explorers</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

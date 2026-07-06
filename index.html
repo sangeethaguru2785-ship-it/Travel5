@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Home | Explore Your World</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="packages.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="packages.html" class="btn btn-primary">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-slider" id="heroSlider">
+      <div class="slide active">
+        <video class="hero-video" muted loop playsinline preload="auto">
+          <source src="hero2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="slide">
+        <video class="hero-video" muted loop playsinline preload="none">
+          <source src="hero3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="slide">
+        <video class="hero-video" muted loop playsinline preload="none">
+          <source src="hero1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="hero-badge">Adventure Awaits</span>
+      <h1 class="hero-title">Discover the <span class="accent">World</span> Beyond Your Imagination</h1>
+      <p class="hero-subtitle">Curated travel experiences that transform your dreams into unforgettable journeys. Explore exotic destinations with expert guides.</p>
+      <div class="hero-actions">
+        <a href="packages.html" class="btn btn-primary btn-large">Explore Packages</a>
+        <a href="about.html" class="btn btn-outline btn-large">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-count="500">500</span>
+          <span class="stat-label">Destinations</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="12000">12,000</span>
+          <span class="stat-label">Happy Travelers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="15">15</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="98">98%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-arrows">
+      <button class="arrow left" id="slidePrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="arrow right" id="slideNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="destinations section" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Popular Destinations</span>
+        <h2 class="section-title">Explore <span class="accent">Top Places</span> Around the Globe</h2>
+        <p class="section-desc">From tropical paradises to historic wonders — discover the world's most breathtaking destinations.</p>
+      </div>
+      <div class="dest-grid" id="destGrid">
+        <div class="dest-card reveal">
+          <div class="dest-img">
+            <img src="assets/images/bali.webp" alt="Bali">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.9</div>
+            <div class="dest-price">From $899</div>
+            <div class="dest-overlay"><a href="404.html">Explore</a></div>
+          </div>
+          <div class="dest-info">
+            <h3>Bali, Indonesia</h3>
+            <p><i class="fas fa-map-pin"></i> 6 Days · 5 Nights</p>
+            <div class="dest-tags">
+              <span>Beach</span><span>Culture</span><span>Wellness</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal">
+          <div class="dest-img">
+            <img src="assets/images/paris.webp" alt="Paris">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.8</div>
+            <div class="dest-price">From $1,299</div>
+            <div class="dest-overlay"><a href="404.html">Explore</a></div>
+          </div>
+          <div class="dest-info">
+            <h3>Paris, France</h3>
+            <p><i class="fas fa-map-pin"></i> 5 Days · 4 Nights</p>
+            <div class="dest-tags">
+              <span>Romance</span><span>Food</span><span>History</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal">
+          <div class="dest-img">
+            <img src="assets/images/maldives.webp" alt="Maldives">
+            <div class="dest-rating"><i class="fas fa-star"></i> 4.9</div>
+            <div class="dest-price">From $1,599</div>
+            <div class="dest-overlay"><a href="404.html">Explore</a></div>
+          </div>
+          <div class="dest-info">
+            <h3>Maldives</h3>
+            <p><i class="fas fa-map-pin"></i> 7 Days · 6 Nights</p>
+            <div class="dest-tags">
+              <span>Luxury</span><span>Diving</span><span>Relaxation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="destinations.html" class="btn btn-outline btn-large" style="--btn-color: var(--primary); color: var(--primary); border-color: var(--primary);">View All Destinations <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us / Services -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why Choose Us</span>
+        <h2 class="section-title">Travel with <span class="accent">Confidence</span></h2>
+        <p class="section-desc">We go beyond bookings to create seamless, memorable travel experiences tailored just for you.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-user-graduate"></i></div>
+          <h3>Expert Local Guides</h3>
+          <p>Our vetted guides share insider knowledge, hidden gems, and authentic cultural stories that bring every destination to life.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-tags"></i></div>
+          <h3>Best Price Guarantee</h3>
+          <p>We negotiate exclusive rates with hotels, airlines, and activity providers so you get premium experiences at the best value.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-headset"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Our dedicated support team is available around the clock to assist with any questions, changes, or emergencies during your trip.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Easy Booking</h3>
+          <p>Our streamlined booking process lets you plan, customize, and confirm your entire itinerary in minutes, not hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Testimonials -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What Our <span class="accent">Travelers</span> Say</h2>
+        <p class="section-desc">Real stories from real travelers who explored the world with us.</p>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-text">"Absolutely breathtaking experience! Stackly planned every detail perfectly. The local guide in Bali took us to hidden waterfalls I never would have found on my own. Already booking my next trip!"</p>
+            <div class="testi-author">
+              <img src="assets/images/meet1.webp" alt="Sarah">
+              <div>
+                <h4>Sarah Johnson</h4>
+                <span>Bali Explorer</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-text">"The European tour was nothing short of magical. From the Eiffel Tower at sunset to gondola rides in Venice — every moment was picture-perfect. The hotel selections were outstanding."</p>
+            <div class="testi-author">
+              <img src="assets/images/meet2.webp" alt="Michael">
+              <div>
+                <h4>Michael Chen</h4>
+                <span>European Heritage Tour</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-text">"Climbing Kilimanjaro with Stackly was life-changing. Their expert guides kept us safe and motivated. The sunrise from the summit is something I'll never forget. Highly recommend!"</p>
+            <div class="testi-author">
+              <img src="assets/images/meet3.webp" alt="Emma">
+              <div>
+                <h4>Emma Rodriguez</h4>
+                <span>Kilimanjaro Trek</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testi-arrow left" id="testiPrev"><i class="fas fa-chevron-left"></i></button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-arrow right" id="testiNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Blog -->
+  <section class="section" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Travel Blog</span>
+        <h2 class="section-title">Latest <span class="accent">Travel Stories</span></h2>
+        <p class="section-desc">Insights, tips, and tales from our travelers around the globe.</p>
+      </div>
+      <div class="services-grid services-grid--3">
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/latest1.webp" alt="Blog" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">March 15, 2026</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">10 Hidden Gems in Southeast Asia</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">Discover off-the-beaten-path destinations that most tourists miss. Our local guides share their best-kept secrets.</p>
+          <a href="404.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.85rem; margin-top: 12px;">Read More</a>
+        </div>
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/latest2.webp" alt="Blog" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">March 10, 2026</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">Ultimate Packing Guide for Europe</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">Travel light and smart with our comprehensive packing checklist tailored for European adventures year-round.</p>
+          <a href="404.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.85rem; margin-top: 12px;">Read More</a>
+        </div>
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/latest3.webp" alt="Blog" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">March 5, 2026</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">Why Travel Insurance Matters</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">Real stories from travelers who learned the hard way. Don't leave home without the right protection.</p>
+          <a href="404.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.85rem; margin-top: 12px;">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section" id="tips" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Travel Tips</span>
+        <h2 class="section-title">Smart <span class="accent">Travel Advice</span></h2>
+        <p class="section-desc">Practical tips to make every journey smoother, safer, and more enjoyable.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-passport"></i></div>
+          <h3>Documents First</h3>
+          <p>Always carry digital and physical copies of your passport, visa, and travel insurance. Store them separately.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-suitcase"></i></div>
+          <h3>Pack Light</h3>
+          <p>Stick to a carry-on when possible. Roll clothes instead of folding — saves space and reduces wrinkles.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-wifi"></i></div>
+          <h3>Stay Connected</h3>
+          <p>Download offline maps and translation apps before you go. Get a local eSIM for affordable data abroad.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Stay Safe</h3>
+          <p>Share your itinerary with someone back home. Know local emergency numbers and trust your instincts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offers -->
+  <section class="section" id="offers" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Limited Time</span>
+        <h2 class="section-title">Special <span class="accent">Offers</span></h2>
+        <p class="section-desc">Exclusive deals and discounts to make your dream vacation more affordable.</p>
+      </div>
+      <div class="packages-grid">
+        <div class="package-card reveal" data-tier="budget">
+          <div class="pkg-badge">20% OFF</div>
+          <div class="pkg-icon"><i class="fas fa-sun"></i></div>
+          <h3 class="pkg-name">Summer Escape</h3>
+          <div class="pkg-price"><span class="currency">$</span>399<span class="period">/person</span></div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> 4 Days / 3 Nights</li>
+            <li><i class="fas fa-check"></i> Beachfront Resort</li>
+            <li><i class="fas fa-check"></i> Daily Breakfast</li>
+            <li><i class="fas fa-check"></i> Airport Transfer</li>
+            <li class="na"><i class="fas fa-times"></i> Guided Tours</li>
+            <li class="na"><i class="fas fa-times"></i> All Meals</li>
+          </ul>
+          <a href="packages.html" class="btn btn-outline pkg-btn" style="--btn-color: var(--primary); color: var(--primary); border-color: var(--primary);">Book Now</a>
+        </div>
+        <div class="package-card reveal featured" data-tier="standard">
+          <div class="pkg-badge">Best Seller</div>
+          <div class="pkg-icon"><i class="fas fa-mountain"></i></div>
+          <h3 class="pkg-name">Weekend Getaway</h3>
+          <div class="pkg-price"><span class="currency">$</span>249<span class="period">/person</span></div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> 2 Days / 1 Night</li>
+            <li><i class="fas fa-check"></i> Cozy Cabin Stay</li>
+            <li><i class="fas fa-check"></i> Hike & Guide</li>
+            <li><i class="fas fa-check"></i> Campfire Dinner</li>
+            <li><i class="fas fa-check"></i> Transport Included</li>
+            <li class="na"><i class="fas fa-times"></i> Premium Upgrade</li>
+          </ul>
+          <a href="packages.html" class="btn btn-primary pkg-btn">Book Now</a>
+        </div>
+        <div class="package-card reveal" data-tier="premium">
+          <div class="pkg-badge">Flash Sale</div>
+          <div class="pkg-icon"><i class="fas fa-ship"></i></div>
+          <h3 class="pkg-name">Cruise Deal</h3>
+          <div class="pkg-price"><span class="currency">$</span>1,299<span class="period">/person</span></div>
+          <ul class="pkg-features">
+            <li><i class="fas fa-check"></i> 7 Days / 6 Nights</li>
+            <li><i class="fas fa-check"></i> Luxury Cabin</li>
+            <li><i class="fas fa-check"></i> All Meals Included</li>
+            <li><i class="fas fa-check"></i> Shore Excursions</li>
+            <li><i class="fas fa-check"></i> Entertainment</li>
+            <li><i class="fas fa-check"></i> Premium Drinks</li>
+          </ul>
+          <a href="packages.html" class="btn btn-outline pkg-btn" style="--btn-color: var(--primary); color: var(--primary); border-color: var(--primary);">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Partners -->
+  <section class="section" id="partners">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Partners</span>
+        <h2 class="section-title">Trusted <span class="accent">Travel Partners</span></h2>
+        <p class="section-desc">We collaborate with the best in the industry to deliver exceptional travel experiences.</p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 28px; flex-wrap: wrap; padding: 20px 0;">
+        <div class="partner-item reveal">
+          <i class="fas fa-plane"></i>
+          <p>SkyWings</p>
+        </div>
+        <div class="partner-item reveal">
+          <i class="fas fa-hotel"></i>
+          <p>StayEasy</p>
+        </div>
+        <div class="partner-item reveal">
+          <i class="fas fa-car"></i>
+          <p>RideOn</p>
+        </div>
+        <div class="partner-item reveal">
+          <i class="fas fa-shield-alt"></i>
+          <p>SafeTrip</p>
+        </div>
+        <div class="partner-item reveal">
+          <i class="fas fa-umbrella-beach"></i>
+          <p>TropicResorts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-box reveal">
+        <h2>Subscribe to Our <span class="accent">Newsletter</span></h2>
+        <p>Get exclusive travel deals, tips, and inspiration delivered to your inbox weekly.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email address" required oninput="this.value = this.value.replace(/[^a-zA-Z0-9@.]/g, '')">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+          </a>
+          <p>Exploring the world, one destination at a time. Your journey begins with us.</p>
+          <div class="footer-social">
+            <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="404.html" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="destinations.html">Europe</a></li>
+            <li><a href="destinations.html">Asia</a></li>
+            <li><a href="destinations.html">Africa</a></li>
+            <li><a href="destinations.html">Australia</a></li>
+            <li><a href="destinations.html">Americas</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html#faq">FAQ</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms & Conditions</a></li>
+            <li><a href="404.html">Cancellation Policy</a></li>
+            <li><a href="404.html">Travel Insurance</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Details</h4>
+          <ul>
+            <li><i class="fas fa-map-pin"></i> 123 Travel Street, NY</li>
+            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+            <li><i class="fas fa-envelope"></i> info@stackly.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri 9AM-6PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly Travel Agency. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for explorers</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

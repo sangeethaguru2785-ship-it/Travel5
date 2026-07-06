@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Stackly</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body class="dashboard-body">
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="dash-wrapper">
+    <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar">
+      <span></span><span></span><span></span>
+    </button>
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-user-icon"><i class="fas fa-user-circle"></i></div>
+        <div>
+          <h4>James Mitchell</h4>
+          <span>admin@stackly.com</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#overview" class="sidebar-link active" data-tab="overview"><i class="fas fa-th-large"></i> Overview</a>
+        <a href="#bookings" class="sidebar-link" data-tab="bookings"><i class="fas fa-suitcase"></i> Bookings</a>
+        <a href="#destinations" class="sidebar-link" data-tab="destinations"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+        <a href="#users" class="sidebar-link" data-tab="users"><i class="fas fa-users"></i> Users</a>
+        <a href="#packages" class="sidebar-link" data-tab="packages"><i class="fas fa-box"></i> Packages</a>
+        <a href="#messages" class="sidebar-link" data-tab="messages"><i class="fas fa-envelope"></i> Messages</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="index.html" class="sidebar-link home-link"><i class="fas fa-home"></i> Back to Home</a>
+        <a href="login.html" class="sidebar-link logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </aside>
+
+    <main class="dash-main">
+      <!-- Overview -->
+      <section class="dash-tab active" id="tab-overview">
+        <div class="dash-header">
+          <h2>Admin Overview</h2>
+          <p>Here's what's happening across your travel platform.</p>
+        </div>
+
+        <div class="dash-cards">
+          <div class="dash-card">
+            <div class="dash-card-icon c1"><i class="fas fa-suitcase"></i></div>
+            <div class="dash-card-info">
+              <span class="dash-card-label">Total Bookings</span>
+              <span class="dash-card-value">1,247</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card-icon c2"><i class="fas fa-users"></i></div>
+            <div class="dash-card-info">
+              <span class="dash-card-label">Registered Users</span>
+              <span class="dash-card-value">3,582</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card-icon c3"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="dash-card-info">
+              <span class="dash-card-label">Destinations</span>
+              <span class="dash-card-value">24</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card-icon c4"><i class="fas fa-dollar-sign"></i></div>
+            <div class="dash-card-info">
+              <span class="dash-card-label">Revenue</span>
+              <span class="dash-card-value">$284.5K</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-stats-row">
+          <div class="stat-item">
+            <div class="stat-icon s1"><i class="fas fa-plane"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Active Trips</div>
+              <div class="stat-number">186</div>
+            </div>
+            <span class="stat-change up">+12%</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon s2"><i class="fas fa-star"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Avg. Rating</div>
+              <div class="stat-number">4.8</div>
+            </div>
+            <span class="stat-change up">+0.2</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon s3"><i class="fas fa-clock"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Pending</div>
+              <div class="stat-number">43</div>
+            </div>
+            <span class="stat-change down">-8%</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon s4"><i class="fas fa-globe"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Countries</div>
+              <div class="stat-number">18</div>
+            </div>
+            <span class="stat-change up">+3</span>
+          </div>
+        </div>
+
+        <div class="dash-charts">
+          <div class="chart-card">
+            <h4><i class="fas fa-chart-line" style="color:#3b82f6;margin-right:8px;"></i> Monthly Revenue</h4>
+            <canvas id="revenueChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h4><i class="fas fa-chart-pie" style="color:#f97316;margin-right:8px;"></i> Booking Status</h4>
+            <canvas id="bookingPieChart"></canvas>
+          </div>
+        </div>
+
+        <div class="dash-activity">
+          <h4><i class="fas fa-bolt" style="color:#f97316;margin-right:8px;"></i> Recent Activity</h4>
+          <div class="activity-item">
+            <div class="activity-dot green"></div>
+            <div class="activity-text"><strong>Sarah Johnson</strong> confirmed booking #WB-2451 for Bali</div>
+            <div class="activity-time">12 min ago</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot blue"></div>
+            <div class="activity-text"><strong>Michael Chen</strong> registered a new account</div>
+            <div class="activity-time">45 min ago</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot orange"></div>
+            <div class="activity-text"><strong>Emma Rodriguez</strong> submitted a review for Tokyo tour</div>
+            <div class="activity-time">2 hrs ago</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot red"></div>
+            <div class="activity-text"><strong>David Park</strong> cancelled booking #WB-2454</div>
+            <div class="activity-time">4 hrs ago</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot purple"></div>
+            <div class="activity-text"><strong>Lisa Thompson</strong> sent a message about Maldives trip</div>
+            <div class="activity-time">6 hrs ago</div>
+          </div>
+        </div>
+
+        <div class="dash-top-list">
+          <div class="top-item">
+            <img src="assets/images/bali.webp" alt="Bali">
+            <div class="top-item-info">
+              <h5>Bali, Indonesia</h5>
+              <span>342 bookings this year</span>
+            </div>
+            <div class="top-item-rank">#1</div>
+          </div>
+          <div class="top-item">
+            <img src="assets/images/paris.webp" alt="Paris">
+            <div class="top-item-info">
+              <h5>Paris, France</h5>
+              <span>287 bookings this year</span>
+            </div>
+            <div class="top-item-rank">#2</div>
+          </div>
+          <div class="top-item">
+            <img src="assets/images/maldives.webp" alt="Maldives">
+            <div class="top-item-info">
+              <h5>Maldives</h5>
+              <span>218 bookings this year</span>
+            </div>
+            <div class="top-item-rank">#3</div>
+          </div>
+          <div class="top-item">
+            <img src="assets/images/tokyo.webp" alt="Tokyo">
+            <div class="top-item-info">
+              <h5>Tokyo, Japan</h5>
+              <span>195 bookings this year</span>
+            </div>
+            <div class="top-item-rank">#4</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bookings -->
+      <section class="dash-tab" id="tab-bookings">
+        <div class="dash-header">
+          <h2>All Bookings</h2>
+          <p>View and manage all customer bookings.</p>
+        </div>
+        <div class="dash-actions-bar">
+          <input type="text" class="dash-search" placeholder="Search bookings...">
+          <select class="dash-filter">
+            <option>All Status</option>
+            <option>Confirmed</option>
+            <option>Pending</option>
+            <option>Cancelled</option>
+          </select>
+          <button class="btn btn-primary" style="padding:10px 24px;"><i class="fas fa-download"></i> Export</button>
+        </div>
+        <div class="dash-table-wrapper">
+          <table class="dash-table">
+            <thead>
+              <tr><th>ID</th><th>Customer</th><th>Destination</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>#WB-2451</td><td>Sarah Johnson</td><td>Bali</td><td>Aug 15</td><td>$899</td><td><span class="status-badge confirmed">Confirmed</span></td><td><a href="#" class="view-link">Manage</a></td></tr>
+              <tr><td>#WB-2452</td><td>Michael Chen</td><td>Santorini</td><td>Sep 10</td><td>$1,199</td><td><span class="status-badge pending">Pending</span></td><td><a href="#" class="view-link">Manage</a></td></tr>
+              <tr><td>#WB-2453</td><td>Emma Rodriguez</td><td>Tokyo</td><td>Nov 05</td><td>$1,499</td><td><span class="status-badge confirmed">Confirmed</span></td><td><a href="#" class="view-link">Manage</a></td></tr>
+              <tr><td>#WB-2454</td><td>David Park</td><td>Paris</td><td>Dec 20</td><td>$1,299</td><td><span class="status-badge cancelled">Cancelled</span></td><td><a href="#" class="view-link">Manage</a></td></tr>
+              <tr><td>#WB-2455</td><td>Jessica & Tom</td><td>Maldives</td><td>Oct 08</td><td>$1,599</td><td><span class="status-badge confirmed">Confirmed</span></td><td><a href="#" class="view-link">Manage</a></td></tr>
+              <tr><td>#WB-2456</td><td>Robert Kim</td><td>Barcelona</td><td>Nov 20</td><td>$2,199</td><td><span class="status-badge pending">Pending</span></td><td><a href="#" class="view-link">Manage</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Destinations -->
+      <section class="dash-tab" id="tab-destinations">
+        <div class="dash-header">
+          <h2>Destinations</h2>
+          <p>Manage your destination catalog.</p>
+        </div>
+        <div class="dash-actions-bar">
+          <button class="btn btn-primary" style="padding: 10px 24px;"><i class="fas fa-plus"></i> Add Destination</button>
+        </div>
+        <div class="dash-charts dash-charts--full" style="margin-bottom:20px;">
+          <div class="chart-card">
+            <h4><i class="fas fa-chart-bar" style="color:#10b981;margin-right:8px;"></i> Bookings by Destination</h4>
+            <canvas id="destChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h4><i class="fas fa-chart-line" style="color:#8b5cf6;margin-right:8px;"></i> Monthly Growth</h4>
+            <canvas id="growthChart"></canvas>
+          </div>
+        </div>
+        <div class="dash-grid-2col">
+          <div class="dash-dest-card">
+            <img src="assets/images/bali.webp" alt="Bali">
+            <div class="dash-dest-info">
+              <h4>Bali, Indonesia</h4>
+              <span class="status-badge confirmed">Active</span>
+              <div class="dash-dest-actions">
+                <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8rem; color: var(--primary); border-color: var(--primary);">Edit</button>
+                <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8rem; color: #ef4444; border-color: #ef4444;">Delete</button>
+              </div>
+            </div>
+          </div>
+          <div class="dash-dest-card">
+            <img src="assets/images/paris.webp" alt="Paris">
+            <div class="dash-dest-info">
+              <h4>Paris, France</h4>
+              <span class="status-badge confirmed">Active</span>
+              <div class="dash-dest-actions">
+                <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8rem; color: var(--primary); border-color: var(--primary);">Edit</button>
+                <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8rem; color: #ef4444; border-color: #ef4444;">Delete</button>
+              </div>
+            </div>
+          </div>
+          <div class="dash-dest-card">
+            <img src="assets/images/maldives.webp" alt="Maldives">
+            <div class="dash-dest-info">
+              <h4>Maldives</h4>
+              <span class="status-badge confirmed">Active</span>
+              <div class="dash-dest-actions">
+                <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8rem; color: var(--primary); border-color: var(--primary);">Edit</button>
+                <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.8rem; color: #ef4444; border-color: #ef4444;">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Users -->
+      <section class="dash-tab" id="tab-users">
+        <div class="dash-header">
+          <h2>Users</h2>
+          <p>Manage registered users.</p>
+        </div>
+        <div class="dash-actions-bar">
+          <input type="text" class="dash-search" placeholder="Search users...">
+          <select class="dash-filter">
+            <option>All Status</option>
+            <option>Active</option>
+            <option>Inactive</option>
+          </select>
+        </div>
+        <div class="dash-table-wrapper">
+          <table class="dash-table">
+            <thead>
+              <tr><th>Name</th><th>Email</th><th>Joined</th><th>Bookings</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sarah Johnson</td><td>sarah.j@email.com</td><td>Jan 2025</td><td>3</td><td><span class="status-badge confirmed">Active</span></td><td><a href="#" class="view-link">View</a></td></tr>
+              <tr><td>Michael Chen</td><td>m.chen@email.com</td><td>Mar 2025</td><td>2</td><td><span class="status-badge confirmed">Active</span></td><td><a href="#" class="view-link">View</a></td></tr>
+              <tr><td>Emma Rodriguez</td><td>emma.r@email.com</td><td>Feb 2025</td><td>4</td><td><span class="status-badge confirmed">Active</span></td><td><a href="#" class="view-link">View</a></td></tr>
+              <tr><td>David Park</td><td>d.park@email.com</td><td>Jun 2025</td><td>1</td><td><span class="status-badge pending">Inactive</span></td><td><a href="#" class="view-link">View</a></td></tr>
+              <tr><td>Jessica Williams</td><td>jess.w@email.com</td><td>Apr 2025</td><td>5</td><td><span class="status-badge confirmed">Active</span></td><td><a href="#" class="view-link">View</a></td></tr>
+              <tr><td>Robert Kim</td><td>r.kim@email.com</td><td>Jul 2025</td><td>2</td><td><span class="status-badge confirmed">Active</span></td><td><a href="#" class="view-link">View</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Packages -->
+      <section class="dash-tab" id="tab-packages">
+        <div class="dash-header">
+          <h2>Packages</h2>
+          <p>Manage tour packages and pricing.</p>
+        </div>
+        <div class="dash-actions-bar">
+          <button class="btn btn-primary" style="padding: 10px 24px;"><i class="fas fa-plus"></i> Add Package</button>
+        </div>
+        <div class="dash-table-wrapper">
+          <table class="dash-table">
+            <thead>
+              <tr><th>Package</th><th>Price</th><th>Duration</th><th>Bookings</th><th>Revenue</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Explorer</td><td>$499</td><td>3 Days</td><td>342</td><td>$170.7K</td><td><span class="status-badge confirmed">Active</span></td><td><a href="#" class="view-link">Edit</a></td></tr>
+              <tr><td>Adventurer</td><td>$899</td><td>5 Days</td><td>587</td><td>$527.7K</td><td><span class="status-badge confirmed">Active</span></td><td><a href="#" class="view-link">Edit</a></td></tr>
+              <tr><td>Voyager</td><td>$1,899</td><td>7 Days</td><td>218</td><td>$414.0K</td><td><span class="status-badge confirmed">Active</span></td><td><a href="#" class="view-link">Edit</a></td></tr>
+              <tr><td>Nomad</td><td>$2,499</td><td>10 Days</td><td>96</td><td>$239.9K</td><td><span class="status-badge pending">Draft</span></td><td><a href="#" class="view-link">Edit</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Messages -->
+      <section class="dash-tab" id="tab-messages">
+        <div class="dash-header">
+          <h2>Messages</h2>
+          <p>Customer inquiries from the contact form.</p>
+        </div>
+        <div class="dash-messages">
+          <div class="dash-msg-card unread">
+            <div class="msg-avatar"><i class="fas fa-user-circle"></i></div>
+            <div class="msg-content">
+              <div class="msg-top">
+                <h4>Emily Watson</h4>
+                <span>2 hours ago</span>
+              </div>
+              <p>Hi, I'm interested in the Bali Adventurer package for August. Is it available for a family of 4?</p>
+            </div>
+            <span class="msg-badge">New</span>
+          </div>
+          <div class="dash-msg-card">
+            <div class="msg-avatar"><i class="fas fa-user-circle"></i></div>
+            <div class="msg-content">
+              <div class="msg-top">
+                <h4>Robert Kim</h4>
+                <span>Yesterday</span>
+              </div>
+              <p>Could you customize a European tour for our group of 10? We'd like to visit Paris, Rome, and Barcelona.</p>
+            </div>
+          </div>
+          <div class="dash-msg-card">
+            <div class="msg-avatar"><i class="fas fa-user-circle"></i></div>
+            <div class="msg-content">
+              <div class="msg-top">
+                <h4>Lisa Thompson</h4>
+                <span>3 days ago</span>
+              </div>
+              <p>I need to reschedule my Maldives trip from October to December. Can you help with that?</p>
+            </div>
+          </div>
+          <div class="dash-msg-card">
+            <div class="msg-avatar"><i class="fas fa-user-circle"></i></div>
+            <div class="msg-content">
+              <div class="msg-top">
+                <h4>James Wilson</h4>
+                <span>5 days ago</span>
+              </div>
+              <p>Are there any group discounts available for the Japan Explorer package? We have 8 people interested.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

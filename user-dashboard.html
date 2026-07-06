@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard - Stackly</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body class="dashboard-body">
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="dash-wrapper">
+    <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar">
+      <span></span><span></span><span></span>
+    </button>
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-user-icon"><i class="fas fa-user-circle"></i></div>
+        <div>
+          <h4>Sarah Johnson</h4>
+          <span>sarah.j@email.com</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#overview" class="sidebar-link active" data-tab="overview"><i class="fas fa-th-large"></i> Overview</a>
+        <a href="#bookings" class="sidebar-link" data-tab="bookings"><i class="fas fa-suitcase"></i> My Bookings</a>
+        <a href="#wishlist" class="sidebar-link" data-tab="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+        <a href="#reviews" class="sidebar-link" data-tab="reviews"><i class="fas fa-star"></i> Reviews</a>
+        <a href="#profile" class="sidebar-link" data-tab="profile"><i class="fas fa-user-cog"></i> Profile</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="index.html" class="sidebar-link home-link"><i class="fas fa-home"></i> Back to Home</a>
+        <a href="login.html" class="sidebar-link logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </aside>
+
+    <main class="dash-main">
+      <!-- Overview Tab -->
+      <section class="dash-tab active" id="tab-overview">
+        <div class="dash-header">
+          <h2>Welcome back, Sarah!</h2>
+          <p>Here's what's happening with your travel plans.</p>
+        </div>
+
+        <div class="dash-cards">
+          <div class="dash-card">
+            <div class="dash-card-icon c1"><i class="fas fa-suitcase"></i></div>
+            <div class="dash-card-info">
+              <span class="dash-card-label">Upcoming Trips</span>
+              <span class="dash-card-value">3</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card-icon c2"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="dash-card-info">
+              <span class="dash-card-label">Destinations Visited</span>
+              <span class="dash-card-value">12</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card-icon c3"><i class="fas fa-heart"></i></div>
+            <div class="dash-card-info">
+              <span class="dash-card-label">Wishlist</span>
+              <span class="dash-card-value">7</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card-icon c4"><i class="fas fa-star"></i></div>
+            <div class="dash-card-info">
+              <span class="dash-card-label">Reviews Written</span>
+              <span class="dash-card-value">5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-stats-row">
+          <div class="stat-item">
+            <div class="stat-icon s1"><i class="fas fa-globe-asia"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Countries Visited</div>
+              <div class="stat-number">8</div>
+            </div>
+            <span class="stat-change up">+2</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon s2"><i class="fas fa-calendar-check"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Trips This Year</div>
+              <div class="stat-number">4</div>
+            </div>
+            <span class="stat-change up">+1</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon s3"><i class="fas fa-clock"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Days Traveling</div>
+              <div class="stat-number">42</div>
+            </div>
+            <span class="stat-change up">+12</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon s4"><i class="fas fa-camera"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Photos Taken</div>
+              <div class="stat-number">1,284</div>
+            </div>
+            <span class="stat-change up">+340</span>
+          </div>
+        </div>
+
+        <div class="dash-charts">
+          <div class="chart-card">
+            <h4><i class="fas fa-chart-bar" style="color:#3b82f6;margin-right:8px;"></i> Trips by Month</h4>
+            <canvas id="tripsChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h4><i class="fas fa-chart-pie" style="color:#f97316;margin-right:8px;"></i> Travel Categories</h4>
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+
+        <div class="dash-section-title">
+          <h3>Your Upcoming Trips</h3>
+        </div>
+        <div class="dash-table-wrapper" style="margin-bottom:36px;">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Destination</th>
+                <th>Dates</th>
+                <th>Package</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="dest-highlight">Bali, Indonesia</span></td>
+                <td>Aug 15 - Aug 21</td>
+                <td>Adventurer</td>
+                <td><span class="status-badge confirmed">Confirmed</span></td>
+                <td><a href="#" class="view-link">View</a></td>
+              </tr>
+              <tr>
+                <td><span class="dest-highlight">Santorini, Greece</span></td>
+                <td>Sep 10 - Sep 16</td>
+                <td>Voyager</td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td><a href="#" class="view-link">View</a></td>
+              </tr>
+              <tr>
+                <td><span class="dest-highlight">Tokyo, Japan</span></td>
+                <td>Nov 05 - Nov 12</td>
+                <td>Explorer</td>
+                <td><span class="status-badge confirmed">Confirmed</span></td>
+                <td><a href="#" class="view-link">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="dash-timeline">
+          <h4><i class="fas fa-road" style="color:#3b82f6;margin-right:8px;"></i> Your Travel Timeline</h4>
+          <div class="timeline-entry">
+            <div class="timeline-marker t1"></div>
+            <div class="timeline-content">
+              <h5>Bali, Indonesia</h5>
+              <p>Adventurer Package - Confirmed</p>
+              <span>Aug 15 - Aug 21, 2026</span>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-marker t2"></div>
+            <div class="timeline-content">
+              <h5>Santorini, Greece</h5>
+              <p>Voyager Package - Awaiting Confirmation</p>
+              <span>Sep 10 - Sep 16, 2026</span>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-marker t3"></div>
+            <div class="timeline-content">
+              <h5>Tokyo, Japan</h5>
+              <p>Explorer Package - Confirmed</p>
+              <span>Nov 05 - Nov 12, 2026</span>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-marker t4"></div>
+            <div class="timeline-content">
+              <h5>Paris, France</h5>
+              <p>Completed - Left a 5-star review</p>
+              <span>Mar 10 - Mar 16, 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-section-title">
+          <h3>Recommended For You</h3>
+        </div>
+        <div class="dash-rec-grid">
+          <div class="rec-card">
+            <img src="assets/images/maldives.webp" alt="Maldives">
+            <div class="rec-info">
+              <h4>Maldives</h4>
+              <p>5 days of pure paradise</p>
+              <span class="rec-price">From $1,599</span>
+            </div>
+          </div>
+          <div class="rec-card">
+            <img src="assets/images/sydney.webp" alt="Sydney">
+            <div class="rec-info">
+              <h4>Sydney, Australia</h4>
+              <p>Harbor views & coastal walks</p>
+              <span class="rec-price">From $1,699</span>
+            </div>
+          </div>
+          <div class="rec-card">
+            <img src="assets/images/santorini.webp" alt="Santorini">
+            <div class="rec-info">
+              <h4>Santorini, Greece</h4>
+              <p>Sunset romance awaits</p>
+              <span class="rec-price">From $1,199</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bookings Tab -->
+      <section class="dash-tab" id="tab-bookings">
+        <div class="dash-header">
+          <h2>My Bookings</h2>
+          <p>View and manage all your travel bookings.</p>
+        </div>
+        <div class="dash-actions-bar">
+          <input type="text" class="dash-search" placeholder="Search bookings...">
+          <select class="dash-filter">
+            <option>All Status</option>
+            <option>Confirmed</option>
+            <option>Pending</option>
+            <option>Cancelled</option>
+          </select>
+        </div>
+        <div class="dash-table-wrapper">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>#WB-2451</td><td>Bali, Indonesia</td><td>Aug 15 - Aug 21</td><td>$899</td><td><span class="status-badge confirmed">Confirmed</span></td><td><a href="#" class="view-link">Details</a></td></tr>
+              <tr><td>#WB-2452</td><td>Santorini, Greece</td><td>Sep 10 - Sep 16</td><td>$1,199</td><td><span class="status-badge pending">Pending</span></td><td><a href="#" class="view-link">Details</a></td></tr>
+              <tr><td>#WB-2453</td><td>Tokyo, Japan</td><td>Nov 05 - Nov 12</td><td>$1,499</td><td><span class="status-badge confirmed">Confirmed</span></td><td><a href="#" class="view-link">Details</a></td></tr>
+              <tr><td>#WB-2454</td><td>Paris, France</td><td>Dec 20 - Dec 25</td><td>$1,299</td><td><span class="status-badge cancelled">Cancelled</span></td><td><a href="#" class="view-link">Details</a></td></tr>
+              <tr><td>#WB-2449</td><td>Bali, Indonesia</td><td>Mar 05 - Mar 12</td><td>$899</td><td><span class="status-badge confirmed">Completed</span></td><td><a href="#" class="view-link">Review</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Wishlist Tab -->
+      <section class="dash-tab" id="tab-wishlist">
+        <div class="dash-header">
+          <h2>My Wishlist</h2>
+          <p>Destinations you've saved for later.</p>
+        </div>
+        <div class="dash-grid-2col">
+          <div class="dash-wishlist-card">
+            <img src="assets/images/maldives.webp" alt="Maldives">
+            <div class="dash-wishlist-info">
+              <h4>Maldives</h4>
+              <p>From $1,599</p>
+              <a href="packages.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Book Now</a>
+            </div>
+          </div>
+          <div class="dash-wishlist-card">
+            <img src="assets/images/sydney.webp" alt="Sydney">
+            <div class="dash-wishlist-info">
+              <h4>Sydney, Australia</h4>
+              <p>From $1,699</p>
+              <a href="packages.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Book Now</a>
+            </div>
+          </div>
+          <div class="dash-wishlist-card">
+            <img src="assets/images/santorini.webp" alt="Santorini">
+            <div class="dash-wishlist-info">
+              <h4>Santorini, Greece</h4>
+              <p>From $1,199</p>
+              <a href="packages.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Book Now</a>
+            </div>
+          </div>
+          <div class="dash-wishlist-card">
+            <img src="assets/images/tokyo.webp" alt="Tokyo">
+            <div class="dash-wishlist-info">
+              <h4>Tokyo, Japan</h4>
+              <p>From $1,499</p>
+              <a href="packages.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Book Now</a>
+            </div>
+          </div>
+          <div class="dash-wishlist-card">
+            <img src="assets/images/paris.webp" alt="Paris">
+            <div class="dash-wishlist-info">
+              <h4>Paris, France</h4>
+              <p>From $1,299</p>
+              <a href="packages.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews Tab -->
+      <section class="dash-tab" id="tab-reviews">
+        <div class="dash-header">
+          <h2>My Reviews</h2>
+          <p>Share your travel experiences with the community.</p>
+        </div>
+        <div class="dash-reviews">
+          <div class="dash-review-card">
+            <div class="review-header">
+              <div>
+                <h4>Bali, Indonesia</h4>
+                <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+              <span class="review-date">Jun 2026</span>
+            </div>
+            <p>Absolutely incredible experience! The guides were knowledgeable and the itinerary was perfectly paced. Every detail was taken care of, from airport transfers to restaurant recommendations. Will definitely book again!</p>
+          </div>
+          <div class="dash-review-card">
+            <div class="review-header">
+              <div>
+                <h4>Paris, France</h4>
+                <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+              <span class="review-date">Mar 2026</span>
+            </div>
+            <p>Magical trip! The Eiffel Tower dinner was unforgettable. Our guide Marie was fantastic — she showed us hidden gems beyond the typical tourist spots. Everything was perfectly organized.</p>
+          </div>
+          <div class="dash-review-card">
+            <div class="review-header">
+              <div>
+                <h4>Tokyo, Japan</h4>
+                <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+              </div>
+              <span class="review-date">Nov 2025</span>
+            </div>
+            <p>An amazing cultural immersion. The temple tours in Kyoto were breathtaking, and the food tour in Osaka was a highlight. Only wish we had more time in Tokyo itself!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profile Tab -->
+      <section class="dash-tab" id="tab-profile">
+        <div class="dash-header">
+          <h2>My Profile</h2>
+          <p>Manage your personal information and preferences.</p>
+        </div>
+        <div class="profile-form-wrapper">
+          <div class="profile-avatar">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#f97316,#ef4444);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;"><i class="fas fa-user"></i></div>
+            <div>
+              <h4 style="font-size:1.1rem;color:#0f172a;">Sarah Johnson</h4>
+              <span style="font-size:0.85rem;color:#64748b;">Member since Jan 2025</span>
+            </div>
+          </div>
+          <form class="profile-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" value="Sarah">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" value="Johnson">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" value="sarah.j@email.com" oninput="this.value = this.value.replace(/[^a-zA-Z0-9@.]/g, '')">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone</label>
+              <input type="tel" class="form-control" value="+1 (555) 987-6543">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Currency</label>
+              <select class="form-control">
+                <option>USD ($)</option>
+                <option>EUR (€)</option>
+                <option>GBP (£)</option>
+                <option>JPY (¥)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

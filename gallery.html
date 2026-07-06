@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Stackly Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="packages.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="packages.html" class="btn btn-primary">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <video class="page-hero-video" autoplay muted loop playsinline poster="">
+      <source src="gallery.mp4" type="video/mp4">
+    </video>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <span class="hero-badge">Gallery</span>
+      <h1 class="page-hero-title">Moments <span class="accent">Captured</span></h1>
+      <p class="page-hero-subtitle">A visual journey through the most stunning places our travelers have experienced around the world.</p>
+    </div>
+  </section>
+
+  <section class="gallery section">
+    <div class="container">
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="beach">Beach</button>
+        <button class="filter-btn" data-filter="mountain">Mountain</button>
+        <button class="filter-btn" data-filter="city">City</button>
+        <button class="filter-btn" data-filter="culture">Culture</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item reveal" data-category="beach">
+          <img src="assets/images/tropicalparadise.webp" alt="Beach">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Tropical Paradise</h4>
+              <p>Maldives</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mountain">
+          <img src="assets/images/mountain.webp" alt="Mountain">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Mountain Majesty</h4>
+              <p>Swiss Alps</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="city">
+          <img src="assets/images/cityoflight.webp" alt="City">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>City of Light</h4>
+              <p>Paris, France</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="culture">
+          <img src="assets/images/cultural.webp" alt="Culture">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Ancient Wonders</h4>
+              <p>India</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="beach">
+          <img src="assets/images/happytravelers.webp" alt="Beach">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Sunset Shores</h4>
+              <p>Santorini</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mountain">
+          <img src="assets/images/peak.webp" alt="Mountain">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Peak Adventure</h4>
+              <p>Nepal</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="city">
+          <img src="assets/images/mountaintrek.webp" alt="City">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Neon Nights</h4>
+              <p>Tokyo, Japan</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="culture">
+          <img src="assets/images/cultural.webp" alt="Culture">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Sacred Grounds</h4>
+              <p>Cambodia</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="beach">
+          <img src="assets/images/crystal.webp" alt="Beach">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Crystal Waters</h4>
+              <p>Caribbean</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mountain">
+          <img src="assets/images/banff.webp" alt="Mountain">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Camping Under Stars</h4>
+              <p>Patagonia</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="culture">
+          <img src="assets/images/india.webp" alt="Culture">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Sacred River</h4>
+              <p>Varanasi, India</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="city">
+          <img src="assets/images/dubai.webp" alt="City">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Desert Oasis</h4>
+              <p>Dubai, UAE</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="beach">
+          <img src="assets/images/water.webp" alt="Beach">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Turquoise Waters</h4>
+              <p>Bora Bora</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mountain">
+          <img src="assets/images/snowy.webp" alt="Mountain">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Snowy Peaks</h4>
+              <p>Rocky Mountains</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="city">
+          <img src="assets/images/skyline.webp" alt="City">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Skyline View</h4>
+              <p>New York City</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="culture">
+          <img src="assets/images/goldenhour.webp" alt="Culture">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Lantern Festival</h4>
+              <p>Chiang Mai</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="beach">
+          <img src="assets/images/bali.webp" alt="Beach">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Golden Sands</h4>
+              <p>Bali</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mountain">
+          <img src="assets/images/latest1.webp" alt="Mountain">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Alpine Sunrise</h4>
+              <p>Switzerland</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="culture">
+          <img src="assets/images/grand.webp" alt="Culture">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Grand Bazaar</h4>
+              <p>Istanbul</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Stories Behind the Photos -->
+  <section class="section" id="stories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Behind the Lens</span>
+        <h2 class="section-title">Stories Behind <span class="accent">the Photos</span></h2>
+        <p class="section-desc">Every picture has a story. Here are the memories behind our favorite shots.</p>
+      </div>
+      <div class="services-grid services-grid--3">
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/team.webp" alt="Story" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">By Sarah J. · March 2026</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">The Sunrise That Changed Everything</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">"We woke at 4 AM to catch the sunrise over Borobudur. As the fog lifted and the first rays hit the temple, there was not a single sound — just pure awe."</p>
+        </div>
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/venice.webp" alt="Story" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">By Michael C. · February 2026</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">Getting Lost in Venice</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">"We ditched the map and wandered the narrow canals. Every corner revealed a new bridge, a hidden courtyard, or a local trattoria. Best decision ever."</p>
+        </div>
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/marrakech.webp" alt="Story" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">By Emma R. · January 2026</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">A Taste of Marrakech</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">"The spice market was a feast for the senses. A local vendor invited us for mint tea and taught us about Moroccan cooking. Travel is about these connections."</p>
+        </div>
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/banff.webp" alt="Story" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">By David L. · December 2025</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">Camping Under Patagonia Stars</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">"No Wi-Fi, no city lights — just the Milky Way stretching across the sky. We sat by the fire, sharing stories with fellow travelers from around the world."</p>
+        </div>
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/mountain.webp" alt="Story" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">By Lisa K. · November 2025</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">A Morning in Montmartre</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">"I found a tiny bakery tucked away on a cobblestone street. The croissant was still warm, and as I sat on the steps watching the city wake up, I felt completely alive."</p>
+        </div>
+        <div class="service-card reveal" style="text-align: left;">
+          <img src="assets/images/tokyo.webp" alt="Story" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">By Kenji T. · October 2025</span>
+          <h3 style="font-size: 1.1rem; margin: 8px 0;">Temples of Kyoto at Dawn</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.7;">"Watching the sunrise filter through the vermillion gates of Fushimi Inari was magical. The shrine was quiet, the air was crisp, and I had the whole path to myself."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+          </a>
+          <p>Exploring the world, one destination at a time. Your journey begins with us.</p>
+          <div class="footer-social">
+            <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="404.html" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="destinations.html">Europe</a></li>
+            <li><a href="destinations.html">Asia</a></li>
+            <li><a href="destinations.html">Africa</a></li>
+            <li><a href="destinations.html">Australia</a></li>
+            <li><a href="destinations.html">Americas</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html#faq">FAQ</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms & Conditions</a></li>
+            <li><a href="404.html">Cancellation Policy</a></li>
+            <li><a href="404.html">Travel Insurance</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Details</h4>
+          <ul>
+            <li><i class="fas fa-map-pin"></i> 123 Travel Street, NY</li>
+            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+            <li><i class="fas fa-envelope"></i> info@stackly.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri 9AM-6PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly Travel Agency. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for explorers</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

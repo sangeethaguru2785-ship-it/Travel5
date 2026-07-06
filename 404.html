@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Stackly Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="Stackly" class="logo-img">
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="packages.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="packages.html" class="btn btn-primary">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero" style="min-height: 100vh;">
+    <div class="page-hero-bg" style="background-image: url('assets/images/banff.webp');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content" style="text-align: center; max-width: 700px; margin: 0 auto;">
+      <h1 class="page-hero-title" style="font-size: clamp(6rem, 12vw, 10rem); line-height: 1; animation: fadeInUp 0.8s 0.3s backwards;">404</h1>
+      <p class="page-hero-subtitle" style="max-width: 500px; margin: 0 auto 36px; animation: fadeInUp 0.8s 0.4s backwards;">Looks like you've wandered off the beaten path. Let's get you back on track.</p>
+      <div style="animation: fadeInUp 0.8s 0.5s backwards; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-primary btn-large"><i class="fas fa-home"></i> Back to Home</a>
+        <a href="#" onclick="history.back(); return false;" class="btn btn-outline btn-large" style="--btn-color: #fff; border-color: rgba(255,255,255,0.3); color: #fff;"><i class="fas fa-arrow-left"></i> Go Back</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
